@@ -1,0 +1,1043 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cash Conversion Cycle Illustrator | Frctnl Finance</title>
+<meta name="description" content="How much cash is trapped in your business, and how much could you release without increasing sales? Free cash conversion cycle calculator for UK SMEs from Frctnl Finance.">
+<meta name="theme-color" content="#77206D">
+<meta property="og:title" content="Cash Conversion Cycle Illustrator | Frctnl Finance">
+<meta property="og:description" content="See how many days your cash is tied up, and test practical ways to release it.">
+<meta property="og:type" content="website">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap">
+<style>
+/* Layout: inputs panel left, results dashboard right on wide screens; stacked on phones. Plum hero block carries the brand; teal marks benchmarks and interaction. */
+:root {
+  color-scheme: light;
+  --bg: #F8F5F9;
+  --surface: #FFFFFF;
+  --surface2: #F2EDF3;
+  --fg: #211B24;
+  --muted: #5F5564;
+  --line: #DED5E0;
+  --line-strong: #B9AABD;
+  --brand: #77206D;
+  --brand-text: #77206D;
+  --btn-bg: #77206D;
+  --btn-bg-hover: #5F1857;
+  --btn-fg: #FFFFFF;
+  --logo: #77206D;
+  --accent: #1B9AAA;
+  --accent-text: #0B6E7B;
+  --accent-soft: rgba(27, 154, 170, 0.16);
+  --hero-bg: #77206D;
+  --hero-fg: #FFFFFF;
+  --hero-muted: #EBD3E7;
+  --hero-accent: #86DAE5;
+  --hero-line: rgba(255, 255, 255, 0.28);
+  --c-stock: #A56A9D;
+  --c-wip: #C79AC1;
+  --c-debt: #77206D;
+  --c-supp: #1B9AAA;
+  --good: #1B7A4B;
+  --warn: #A85500;
+  --bad: #B3261E;
+  --good-bg: rgba(27, 122, 75, 0.12);
+  --warn-bg: rgba(168, 85, 0, 0.12);
+  --bad-bg: rgba(179, 38, 30, 0.1);
+  --info-bg: rgba(27, 154, 170, 0.14);
+  --shadow: 0 1px 2px rgba(60, 20, 56, 0.06), 0 6px 20px rgba(60, 20, 56, 0.06);
+  --font-display: "Newsreader", "Iowan Old Style", Georgia, serif;
+  --font-body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #160F19;
+    --surface: #211826;
+    --surface2: #2A2030;
+    --fg: #F2EBF4;
+    --muted: #BDB1C1;
+    --line: #3A2E40;
+    --line-strong: #5C4C63;
+    --brand-text: #E0A9D8;
+    --btn-bg: #8B2B7F;
+    --btn-bg-hover: #A0388F;
+    --logo: #E3B0DB;
+    --accent: #4CC3D3;
+    --accent-text: #86DAE5;
+    --accent-soft: rgba(76, 195, 211, 0.18);
+    --hero-bg: #4A1544;
+    --hero-muted: #E2C6DD;
+    --c-stock: #8E5E89;
+    --c-wip: #B27FAA;
+    --c-debt: #D58BCB;
+    --c-supp: #4CC3D3;
+    --good: #5CCB91;
+    --warn: #F0A24B;
+    --bad: #FF8A80;
+    --good-bg: rgba(92, 203, 145, 0.16);
+    --warn-bg: rgba(240, 162, 75, 0.16);
+    --bad-bg: rgba(255, 138, 128, 0.16);
+    --info-bg: rgba(76, 195, 211, 0.18);
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #160F19;
+  --surface: #211826;
+  --surface2: #2A2030;
+  --fg: #F2EBF4;
+  --muted: #BDB1C1;
+  --line: #3A2E40;
+  --line-strong: #5C4C63;
+  --brand-text: #E0A9D8;
+  --btn-bg: #8B2B7F;
+  --btn-bg-hover: #A0388F;
+  --logo: #E3B0DB;
+  --accent: #4CC3D3;
+  --accent-text: #86DAE5;
+  --accent-soft: rgba(76, 195, 211, 0.18);
+  --hero-bg: #4A1544;
+  --hero-muted: #E2C6DD;
+  --c-stock: #8E5E89;
+  --c-wip: #B27FAA;
+  --c-debt: #D58BCB;
+  --c-supp: #4CC3D3;
+  --good: #5CCB91;
+  --warn: #F0A24B;
+  --bad: #FF8A80;
+  --good-bg: rgba(92, 203, 145, 0.16);
+  --warn-bg: rgba(240, 162, 75, 0.16);
+  --bad-bg: rgba(255, 138, 128, 0.16);
+  --info-bg: rgba(76, 195, 211, 0.18);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+img { max-width: 100%; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.5;
+  padding-inline: clamp(16px, 4vw, 32px);
+  padding-block: 0 48px;
+  margin: 0;
+}
+.wrap { max-width: 1180px; margin-inline: auto; }
+h1, h2, h3, p, dl, dd, figure { margin: 0; }
+h1, h2 { font-family: var(--font-display); font-weight: 500; text-wrap: balance; letter-spacing: -0.01em; }
+a { color: var(--accent-text); text-underline-offset: 3px; }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+.num, .tnum { font-variant-numeric: tabular-nums; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* Header */
+.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 18px; flex-wrap: wrap; }
+.logo { width: clamp(150px, 24vw, 210px); aspect-ratio: 391 / 67; background: var(--logo);
+  -webkit-mask: url("data:image/png;base64,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") center / contain no-repeat;
+  mask: url("data:image/png;base64,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") center / contain no-repeat; }
+.top-actions { display: flex; align-items: center; gap: 10px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 18px;
+  border-radius: 8px; border: 1px solid transparent; font: 600 15px/1.2 var(--font-body); text-decoration: none; cursor: pointer;
+  background: var(--btn-bg); color: var(--btn-fg); text-align: center; }
+.btn:hover { background: var(--btn-bg-hover); }
+.btn.secondary { background: transparent; color: var(--fg); border-color: var(--line-strong); }
+.btn.secondary:hover { background: var(--surface2); }
+.btn.small { min-height: 36px; padding: 6px 12px; font-size: 14px; }
+.btn[disabled] { opacity: 0.5; cursor: not-allowed; }
+
+/* Intro */
+.intro { padding-block: 20px 28px; max-width: 860px; }
+.eyebrow { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-text); }
+h1 { font-size: clamp(30px, 4.6vw, 48px); line-height: 1.1; margin-top: 8px; }
+h1 em { font-style: italic; color: var(--brand-text); }
+.lede { margin-top: 14px; font-size: 18px; color: var(--muted); max-width: 62ch; }
+
+/* Main grid */
+.grid { display: grid; gap: 24px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 980px) { .grid { grid-template-columns: minmax(300px, 370px) minmax(0, 1fr); gap: 32px; } }
+.stack { display: grid; gap: 24px; min-width: 0; }
+
+.card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px; box-shadow: var(--shadow); min-width: 0; }
+.card h2 { font-size: 26px; line-height: 1.2; }
+.card .hint { color: var(--muted); font-size: 14px; margin-top: 4px; }
+
+/* Form */
+.form { display: grid; gap: 16px; margin-top: 18px; }
+.field { display: grid; gap: 6px; }
+.field label, .field .lab { font-weight: 600; font-size: 14px; }
+.field .help { font-size: 13px; color: var(--muted); }
+.input-wrap { position: relative; }
+.input-wrap span { position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+input[type="text"], select { width: 100%; min-height: 46px; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--bg); color: var(--fg);
+  font: 500 16px var(--font-body); padding: 10px 12px; font-variant-numeric: tabular-nums; }
+.input-wrap input { padding-left: 28px; }
+input[disabled] { opacity: 0.5; }
+.check { display: flex; gap: 10px; align-items: flex-start; font-size: 15px; cursor: pointer; }
+.check input { width: 20px; height: 20px; margin: 1px 0 0; accent-color: var(--accent); flex: none; }
+.check small { display: block; color: var(--muted); font-size: 13px; }
+.divider { border: 0; border-top: 1px solid var(--line); margin: 2px 0; }
+.example { background: var(--info-bg); border-radius: 10px; padding: 12px 14px; font-size: 14px; display: grid; gap: 8px; }
+.row-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.linkbtn { background: none; border: 0; padding: 0; font: inherit; color: var(--accent-text); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+.privacy-mini { font-size: 13px; color: var(--muted); }
+
+/* Hero result */
+.hero { background: var(--hero-bg); color: var(--hero-fg); border-radius: 16px; padding: clamp(20px, 3vw, 32px); display: grid; gap: 22px; }
+.hero-top { display: grid; gap: 22px; grid-template-columns: minmax(0, 1fr); }
+@media (min-width: 720px) { .hero-top { grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); align-items: end; } }
+.hero .label { font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--hero-accent); }
+.hero .big { font-family: var(--font-display); font-weight: 400; font-size: clamp(72px, 12vw, 120px); line-height: 0.95; letter-spacing: -0.03em; margin-top: 6px; font-variant-numeric: tabular-nums; }
+.hero .big small { font-size: 0.32em; letter-spacing: 0; font-family: var(--font-body); font-weight: 500; margin-left: 6px; color: var(--hero-muted); }
+.hero .explain { margin-top: 10px; color: var(--hero-muted); max-width: 46ch; }
+.facts { display: grid; gap: 14px; }
+.fact { border-top: 1px solid var(--hero-line); padding-top: 12px; }
+.fact dt { font-size: 14px; color: var(--hero-muted); }
+.fact dd { font-family: var(--font-display); font-size: clamp(30px, 4vw, 40px); line-height: 1.1; margin-top: 2px; font-variant-numeric: tabular-nums; }
+.fact dd.accent { color: var(--hero-accent); }
+.eq { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; font-variant-numeric: tabular-nums; border-top: 1px solid var(--hero-line); padding-top: 16px; }
+.eq .chip { background: rgba(255, 255, 255, 0.12); border-radius: 8px; padding: 6px 10px; font-size: 15px; }
+.eq .chip b { font-weight: 700; }
+.eq .op { color: var(--hero-muted); font-weight: 600; }
+.priority { font-size: 15px; color: var(--hero-fg); }
+.priority a { color: var(--hero-accent); font-weight: 600; }
+
+.warn-list { display: grid; gap: 8px; }
+.note-warn { background: var(--warn-bg); color: var(--fg); border-left: 4px solid var(--warn); border-radius: 6px; padding: 10px 14px; font-size: 14px; }
+.empty { text-align: center; padding: 48px 20px; }
+.empty h2 { font-size: 28px; }
+.empty p { color: var(--muted); margin-top: 8px; }
+
+/* Components */
+.section-title { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 14px; }
+.section-title h2 { font-size: 26px; }
+.section-title p { color: var(--muted); font-size: 14px; }
+.comps { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); }
+.comp { border: 1px solid var(--line); border-radius: 12px; padding: 16px; display: grid; gap: 8px; align-content: start; background: var(--surface); min-width: 0; }
+.comp header { display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; flex-wrap: wrap; }
+.comp h3 { font-size: 15px; font-weight: 700; }
+.comp h3 span { color: var(--muted); font-weight: 500; font-size: 13px; margin-left: 4px; }
+.comp .val { font-family: var(--font-display); font-size: 44px; line-height: 1; font-variant-numeric: tabular-nums; }
+.comp .val small { font: 500 14px var(--font-body); color: var(--muted); margin-left: 4px; }
+.comp .desc { font-size: 14px; color: var(--muted); }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.pill::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.pill.bad { color: var(--bad); background: var(--bad-bg); }
+.pill.good { color: var(--good); background: var(--good-bg); }
+.pill.warn { color: var(--warn); background: var(--warn-bg); }
+.pill.info { color: var(--accent-text); background: var(--info-bg); }
+.pill.ok { color: var(--muted); background: var(--surface2); }
+.meter { position: relative; height: 10px; background: var(--surface2); border-radius: 999px; margin-top: 8px; }
+.meter .band { position: absolute; top: 0; bottom: 0; background: var(--accent); opacity: 0.45; border-radius: 999px; }
+.meter .mark { position: absolute; top: -5px; width: 4px; height: 20px; margin-left: -2px; border-radius: 2px; background: var(--brand-text); box-shadow: 0 0 0 2px var(--surface); }
+.meter-key { display: flex; justify-content: space-between; font-size: 12px; color: var(--muted); gap: 8px; }
+.daycash { font-size: 13px; color: var(--muted); border-top: 1px dashed var(--line); padding-top: 8px; }
+.daycash b { color: var(--fg); font-variant-numeric: tabular-nums; }
+
+/* Scenario */
+.presets { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+.chip-btn { border: 1px solid var(--line-strong); background: var(--surface); color: var(--fg); border-radius: 999px; padding: 8px 14px; font: 600 14px var(--font-body); cursor: pointer; min-height: 40px; }
+.chip-btn:hover { background: var(--accent-soft); border-color: var(--accent); }
+.sliders { display: grid; gap: 18px 28px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 18px; }
+.slider { display: grid; gap: 6px; }
+.slider .head { display: flex; justify-content: space-between; gap: 10px; align-items: baseline; }
+.slider label { font-weight: 600; font-size: 14px; }
+.slider .read { font-weight: 700; font-variant-numeric: tabular-nums; color: var(--accent-text); white-space: nowrap; }
+.slider input[type="range"] { width: 100%; accent-color: var(--accent); height: 28px; margin: 0; }
+.slider .sub { font-size: 13px; color: var(--muted); }
+.outcome { margin-top: 22px; display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.outcome > div { background: var(--surface2); border-radius: 12px; padding: 14px 16px; }
+.outcome .k { font-size: 13px; color: var(--muted); }
+.outcome .v { font-family: var(--font-display); font-size: 34px; line-height: 1.15; font-variant-numeric: tabular-nums; }
+.outcome .v.accent { color: var(--accent-text); }
+.outcome .v small { font: 500 14px var(--font-body); color: var(--muted); }
+.levers { margin-top: 20px; display: grid; gap: 10px; }
+.lever { display: grid; gap: 4px; }
+.lever .t { display: flex; justify-content: space-between; gap: 10px; font-size: 14px; flex-wrap: wrap; }
+.lever .t b { font-variant-numeric: tabular-nums; }
+.lever .bar { height: 8px; border-radius: 999px; background: var(--surface2); overflow: hidden; }
+.lever .bar span { display: block; height: 100%; background: var(--accent); border-radius: 999px; }
+.fineprint { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+/* Timeline */
+.tl { margin-top: 26px; display: grid; gap: 24px; }
+.tl h3 { font-size: 16px; font-weight: 700; }
+.tl-block { display: grid; gap: 10px; }
+.tlbody { position: relative; display: grid; gap: 12px; }
+.gl { position: absolute; top: 0; bottom: 0; width: 1px; background: var(--line); }
+.tlrow { position: relative; display: grid; gap: 4px; }
+.tlrow .cap { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 13px; color: var(--muted); }
+.tlrow .cap b { color: var(--fg); font-variant-numeric: tabular-nums; }
+.dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; }
+.track { position: relative; height: 18px; }
+.seg { position: absolute; top: 0; bottom: 0; border-radius: 3px; }
+.seg.c-stock, .dot.c-stock { background: var(--c-stock); }
+.seg.c-wip, .dot.c-wip { background: var(--c-wip); }
+.seg.c-debt, .dot.c-debt { background: var(--c-debt); }
+.seg.c-supp, .dot.c-supp { background: var(--c-supp); }
+.seg.gap-pos, .dot.gap-pos { background: var(--warn); }
+.seg.gap-neg, .dot.gap-neg { background: var(--good); }
+.axis { position: relative; height: 18px; font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.axis span { position: absolute; top: 0; transform: translateX(-50%); }
+.axis span:first-child { transform: none; }
+.axis span:last-child { transform: translateX(-100%); }
+.axis-title { font-size: 12px; color: var(--muted); }
+
+/* CTA */
+.cta { background: var(--surface); border: 2px solid var(--brand); border-radius: 16px; padding: clamp(20px, 3vw, 30px); display: grid; gap: 18px; }
+.cta h2 { font-size: clamp(26px, 3.4vw, 34px); line-height: 1.15; }
+.cta p { color: var(--muted); max-width: 60ch; }
+.cta ul { margin: 0; padding-left: 20px; color: var(--fg); display: grid; gap: 4px; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.contact-line { display: flex; flex-wrap: wrap; gap: 8px 14px; align-items: center; font-size: 15px; }
+.contact-line code { font: 600 15px var(--font-body); background: var(--surface2); padding: 4px 8px; border-radius: 6px; user-select: all; }
+.status { font-size: 13px; color: var(--muted); min-height: 1.4em; }
+
+/* Notes */
+details { border: 1px solid var(--line); border-radius: 12px; background: var(--surface); padding: 14px 18px; }
+summary { cursor: pointer; font-weight: 600; }
+details .body { display: grid; gap: 10px; margin-top: 12px; font-size: 14px; color: var(--muted); }
+details .body b { color: var(--fg); }
+details table { border-collapse: collapse; width: 100%; font-size: 13px; }
+details th, details td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--line); }
+.tablewrap { overflow-x: auto; }
+.legal { margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--line); display: grid; gap: 10px; font-size: 13px; color: var(--muted); max-width: 90ch; }
+.legal strong { color: var(--fg); }
+.foot { margin-top: 18px; font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 6px 16px; }
+
+@media print { .top-actions, .presets { display: none; } }
+@media (prefers-reduced-motion: no-preference) { .btn, .chip-btn { transition: background 0.15s ease, border-color 0.15s ease; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="logo" role="img" aria-label="Frctnl Finance"></div>
+    <div class="top-actions">
+      <button class="btn secondary small" id="themeBtn" type="button" aria-label="Switch colour theme">Dark mode</button>
+      <a class="btn small" href="https://calendar.google.com/appointments/schedules/AcZssZ0Wil1x1SjPowuxT4Nsh5yYhfWMIz3oNOxC12wMNNrg8KtTn2KqfIbTI1KSbIZXyxqwsj5ZDtXK" target="_blank" rel="noopener">Book a free review</a>
+    </div>
+  </header>
+
+  <section class="intro">
+    <p class="eyebrow">Cash conversion cycle illustrator</p>
+    <h1>How much cash is <em>trapped</em> in your business, and how much could you release without increasing sales?</h1>
+    <p class="lede">Enter a handful of figures from your latest accounts. See how many days your cash is tied up between paying suppliers and collecting from customers, then test practical changes to see what they would free up.</p>
+  </section>
+
+  <div class="grid">
+    <!-- INPUTS -->
+    <aside class="card" aria-labelledby="figs-h">
+      <h2 id="figs-h">Your figures</h2>
+      <p class="hint">Use annual figures for your last full year, excluding VAT. Balance sheet items are the year-end balances.</p>
+
+      <div class="example" id="exNote">
+        <span><b>Example figures are loaded</b> so you can see how it works. Replace them with your own.</span>
+        <div class="row-actions"><button class="btn small secondary" type="button" id="clearBtn">Clear and enter mine</button></div>
+      </div>
+
+      <form class="form" id="form" autocomplete="off" novalidate>
+        <div class="field">
+          <label for="sector">Business type</label>
+          <select id="sector">
+            <option value="ecommerce">Ecommerce and retail</option>
+            <option value="wholesale" selected>Wholesale and distribution</option>
+            <option value="manufacturing">Manufacturing</option>
+            <option value="services">Professional and business services</option>
+            <option value="construction">Construction and trades</option>
+            <option value="other">Other (no benchmark)</option>
+          </select>
+          <span class="help">Used for the indicative benchmark ranges.</span>
+        </div>
+
+        <hr class="divider">
+
+        <div class="field">
+          <label for="revenue">Annual revenue</label>
+          <div class="input-wrap"><span>£</span><input type="text" id="revenue" inputmode="decimal" placeholder="e.g. 4,200,000"></div>
+          <span class="help">Turnover from your profit and loss account, ex VAT.</span>
+        </div>
+        <div class="field">
+          <label for="cogs">Annual cost of sales</label>
+          <div class="input-wrap"><span>£</span><input type="text" id="cogs" inputmode="decimal" placeholder="e.g. 2,730,000"></div>
+          <span class="help">Direct costs of goods or delivery (COGS), ex VAT.</span>
+        </div>
+        <div class="field">
+          <label for="debtors">Trade debtors</label>
+          <div class="input-wrap"><span>£</span><input type="text" id="debtors" inputmode="decimal" placeholder="e.g. 690,000"></div>
+          <span class="help">Money customers owe you at the year end.</span>
+        </div>
+
+        <label class="check"><input type="checkbox" id="noStock"><span>I don't hold stock<small>Sets stock days to zero, common for service businesses.</small></span></label>
+
+        <div class="field" id="stockField">
+          <label for="stock">Stock (inventory)</label>
+          <div class="input-wrap"><span>£</span><input type="text" id="stock" inputmode="decimal" placeholder="e.g. 520,000"></div>
+          <span class="help">Value of stock on the balance sheet at the year end.</span>
+        </div>
+
+        <label class="check"><input type="checkbox" id="useWip"><span>I do work before I invoice it<small>Adds unbilled work (work in progress) to the cycle.</small></span></label>
+
+        <div class="field" id="wipField" hidden>
+          <label for="wip">Unbilled work in progress</label>
+          <div class="input-wrap"><span>£</span><input type="text" id="wip" inputmode="decimal" placeholder="e.g. 150,000"></div>
+          <span class="help">Work done but not yet invoiced, at the year end.</span>
+        </div>
+
+        <div class="field">
+          <label for="creditors">Trade creditors</label>
+          <div class="input-wrap"><span>£</span><input type="text" id="creditors" inputmode="decimal" placeholder="e.g. 310,000"></div>
+          <span class="help">Money you owe suppliers at the year end.</span>
+        </div>
+
+        <p class="privacy-mini">Everything is calculated in your browser. Nothing you type is stored or sent.</p>
+        <button class="linkbtn" type="button" id="exampleBtn" style="justify-self:start">Reload the example figures</button>
+      </form>
+    </aside>
+
+    <!-- RESULTS -->
+    <div class="stack">
+      <div class="card empty" id="empty" hidden>
+        <h2>Enter your revenue and cost of sales</h2>
+        <p>Add those two figures, plus debtors and creditors, and your cash conversion cycle appears here.</p>
+      </div>
+
+      <div class="stack" id="dash">
+        <div class="warn-list" id="warns"></div>
+
+        <section class="hero" aria-labelledby="hero-h">
+          <div class="hero-top">
+            <div>
+              <p class="label" id="hero-h">Your cash conversion cycle</p>
+              <p class="big" id="heroCcc">0<small>days</small></p>
+              <p class="explain" id="heroExplain"></p>
+            </div>
+            <dl class="facts">
+              <div class="fact"><dt>Cash tied up in day-to-day trading</dt><dd id="factTied">£0</dd></div>
+              <div class="fact"><dt id="factReleaseLabel">Could be released at typical levels</dt><dd class="accent" id="factRelease">£0</dd></div>
+            </dl>
+          </div>
+          <div class="eq" id="eq" aria-label="How the cycle adds up"></div>
+          <p class="priority" id="priority"></p>
+        </section>
+
+        <section class="card" aria-labelledby="comp-h">
+          <div class="section-title"><h2 id="comp-h">Where the days go</h2><p id="compSub"></p></div>
+          <div class="comps" id="comps"></div>
+        </section>
+
+        <section class="card" aria-labelledby="scen-h">
+          <h2 id="scen-h">Test practical improvements</h2>
+          <p class="hint">Choose a starting point, then adjust the sliders. The cycle and the cash impact update straight away.</p>
+          <div class="presets" role="group" aria-label="Quick scenarios">
+            <button class="chip-btn" type="button" data-preset="dso">Collect faster: 10 fewer debtor days</button>
+            <button class="chip-btn" type="button" data-preset="dio">Leaner stock: 5 fewer stock days</button>
+            <button class="chip-btn" type="button" data-preset="dpo">Longer supplier terms: 10 more days</button>
+            <button class="chip-btn" type="button" data-preset="all">All of these</button>
+            <button class="chip-btn" type="button" data-preset="none">Clear</button>
+          </div>
+
+          <div class="sliders">
+            <div class="slider" data-k="dso">
+              <div class="head"><label for="sDso">Reduce debtor days by</label><span class="read" id="rDso">10 days</span></div>
+              <input type="range" id="sDso" min="0" max="45" step="1" value="10">
+              <span class="sub">Faster invoicing, clearer terms, tighter credit control.</span>
+            </div>
+            <div class="slider" data-k="dio" id="rowDio">
+              <div class="head"><label for="sDio">Reduce stock days by</label><span class="read" id="rDio">5 days</span></div>
+              <input type="range" id="sDio" min="0" max="45" step="1" value="5">
+              <span class="sub">Buy closer to demand, clear slow-moving lines.</span>
+            </div>
+            <div class="slider" data-k="wip" id="rowWip" hidden>
+              <div class="head"><label for="sWip">Reduce unbilled days by</label><span class="read" id="rWip">5 days</span></div>
+              <input type="range" id="sWip" min="0" max="30" step="1" value="5">
+              <span class="sub">Invoice on milestones or monthly rather than at the end.</span>
+            </div>
+            <div class="slider" data-k="dpo">
+              <div class="head"><label for="sDpo">Extend creditor days by</label><span class="read" id="rDpo">10 days</span></div>
+              <input type="range" id="sDpo" min="0" max="30" step="1" value="10">
+              <span class="sub">Negotiate longer supplier terms. Stay within what suppliers agree.</span>
+            </div>
+          </div>
+
+          <div class="outcome">
+            <div><p class="k">Cycle after improvements</p><p class="v" id="oCcc">0 <small>days</small></p><p class="k" id="oCccSub"></p></div>
+            <div><p class="k">Estimated cash released</p><p class="v accent" id="oCash">£0</p><p class="k" id="oCashSub"></p></div>
+          </div>
+
+          <div class="levers" id="levers"></div>
+          <p class="fineprint">A one-off release of working capital, not extra profit. Debtor and unbilled days are valued at average daily revenue. Stock and creditor days are valued at average daily cost of sales.</p>
+
+          <div class="tl" id="tl"></div>
+        </section>
+
+        <section class="cta" aria-labelledby="cta-h">
+          <div>
+            <p class="eyebrow">Next step</p>
+            <h2 id="cta-h">Find out why your cash is tied up, and what to do first</h2>
+          </div>
+          <p id="ctaLine">Book a free 30-minute working-capital review. We'll look at the main causes of cash being tied up in your business and agree a prioritised action plan.</p>
+          <ul>
+            <li>Which of the three measures is costing you most</li>
+            <li>Practical changes that suit your customers and suppliers</li>
+            <li>A short, prioritised plan you can start on straight away</li>
+          </ul>
+          <div class="cta-actions">
+            <a class="btn" id="bookBtn" href="https://calendar.google.com/appointments/schedules/AcZssZ0Wil1x1SjPowuxT4Nsh5yYhfWMIz3oNOxC12wMNNrg8KtTn2KqfIbTI1KSbIZXyxqwsj5ZDtXK" target="_blank" rel="noopener">Book your free 30-minute review</a>
+            <a class="btn secondary" href="https://www.frctnl.biz/" target="_blank" rel="noopener">Visit frctnl.biz</a>
+            <button class="btn secondary" type="button" id="pdfBtn">Download results as PDF</button>
+          </div>
+          <div class="contact-line">
+            <span>Or email us at <code id="mailText">hello@frctnl.biz</code></span>
+            <a class="btn secondary small" id="mailBtn" href="mailto:hello@frctnl.biz">Open an email</a>
+            <button class="btn secondary small" type="button" id="copyMail">Copy address</button>
+            <button class="btn secondary small" type="button" id="copySummary">Copy my results</button>
+          </div>
+          <p class="status" id="status" role="status"></p>
+        </section>
+
+        <details>
+          <summary>How this is calculated, and where the benchmarks come from</summary>
+          <div class="body">
+            <p><b>Debtor days (DSO)</b> = trade debtors ÷ annual revenue × 365.<br>
+            <b>Stock days (DIO)</b> = stock ÷ annual cost of sales × 365.<br>
+            <b>Creditor days (DPO)</b> = trade creditors ÷ annual cost of sales × 365.<br>
+            <b>Unbilled days</b> (optional) = unbilled work ÷ annual revenue × 365.<br>
+            <b>Cash conversion cycle</b> = stock days + unbilled days + debtor days − creditor days.</p>
+            <p><b>Cash tied up</b> = trade debtors + stock + unbilled work − trade creditors. <b>Potential release at typical levels</b> adds up the cash you would free by moving each measure that is worse than the middle of the typical range for your business type to that middle point.</p>
+            <p>Year-end balances can differ from the average through the year, especially for seasonal businesses. Revenue is taken ex VAT, so debtor days may read a little lower than your credit control reports if those include VAT.</p>
+            <div class="tablewrap" id="benchTable"></div>
+            <p>Debtor-day ranges are informed by payment-time data for UK sectors published by <a href="https://www.novuna.co.uk/news-and-insights/business-cash-flow/late-payments-soar-past-50-days-the-uks-worst-paying-industries-revealed/" target="_blank" rel="noopener">Novuna Business Cash Flow</a> (published May 2025, updated March 2026). Stock-day, creditor-day and unbilled-day ranges are Frctnl Finance rules of thumb, not published statistics. Treat every range as a starting point for a conversation.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+
+  <footer class="legal">
+    <p><strong>Important.</strong> This tool gives indicative estimates based on the figures you enter and broad sector ranges. It is not financial, tax, accounting or legal advice, and results should not be relied on to make decisions without professional input. Cash released is an estimate and depends on customer, supplier and market conditions.</p>
+    <p><strong>Privacy.</strong> The calculations run in your browser. The figures you enter are not stored, saved or sent to Frctnl Finance. If you get in touch, we use the details you choose to share only to respond to your enquiry. More at <a href="https://www.frctnl.biz/" target="_blank" rel="noopener">frctnl.biz</a>.</p>
+    <div class="foot"><span>© Frctnl Finance</span><a href="https://www.frctnl.biz/" target="_blank" rel="noopener">www.frctnl.biz</a><span>hello@frctnl.biz</span></div>
+  </footer>
+</div>
+
+<script src="vendor/jspdf.umd.min.js"></script>
+<script>
+(function () {
+  var LOGO = "data:image/png;base64,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";
+  var BOOK = "https://calendar.google.com/appointments/schedules/AcZssZ0Wil1x1SjPowuxT4Nsh5yYhfWMIz3oNOxC12wMNNrg8KtTn2KqfIbTI1KSbIZXyxqwsj5ZDtXK";
+  var EMAIL = "hello@frctnl.biz";
+  var $ = function (id) { return document.getElementById(id); };
+  var GBP = new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP", maximumFractionDigits: 0 });
+  var NUM = new Intl.NumberFormat("en-GB", { maximumFractionDigits: 0 });
+  var money = function (v) { return GBP.format(Math.round(v)); };
+  var rd = function (v) { return Math.round(v); };
+
+  /* Indicative ranges [low, high] in days. */
+  var SECTORS = {
+    ecommerce:    { label: "ecommerce and retail",              dso: [0, 14],  dio: [45, 90],  dpo: [25, 45], wip: null },
+    wholesale:    { label: "wholesale and distribution",        dso: [40, 50], dio: [45, 75],  dpo: [35, 50], wip: null },
+    manufacturing:{ label: "manufacturing",                     dso: [50, 70], dio: [60, 100], dpo: [40, 60], wip: null },
+    services:     { label: "professional and business services", dso: [35, 45], dio: null,      dpo: [25, 40], wip: [10, 30] },
+    construction: { label: "construction and trades",           dso: [35, 50], dio: [15, 40],  dpo: [35, 55], wip: [10, 30] },
+    other:        { label: "your sector",                       dso: null,     dio: null,      dpo: null,     wip: null }
+  };
+  var NAMES = { dso: "Debtor days", dio: "Stock days", wip: "Unbilled days", dpo: "Creditor days" };
+  var ABBR = { dso: "DSO", dio: "DIO", wip: "WIP", dpo: "DPO" };
+  var DESC = {
+    dso: "How long customers take to pay you.",
+    dio: "How long stock sits before it is sold.",
+    wip: "How long work is done before you invoice it.",
+    dpo: "How long you take to pay suppliers."
+  };
+
+  var EX = { sector: "wholesale", revenue: 4200000, cogs: 2730000, debtors: 690000, stock: 520000, creditors: 310000, wip: 0, noStock: false, useWip: false };
+  var S = Object.assign({}, EX);
+  var L = { dso: 10, dio: 5, dpo: 10, wip: 5 };
+  var edited = false;
+
+  /* ---------- parsing and formatting ---------- */
+  function num(el) {
+    var v = parseFloat(String(el.value).replace(/[^0-9.]/g, ""));
+    return isNaN(v) ? 0 : v;
+  }
+  function fillInputs() {
+    ["revenue", "cogs", "debtors", "stock", "creditors", "wip"].forEach(function (k) {
+      $(k).value = S[k] ? NUM.format(S[k]) : "";
+    });
+    $("sector").value = S.sector;
+    $("noStock").checked = S.noStock;
+    $("useWip").checked = S.useWip;
+    syncToggles();
+  }
+  function syncToggles() {
+    $("stockField").hidden = S.noStock;
+    $("wipField").hidden = !S.useWip;
+    $("rowDio").hidden = S.noStock;
+    $("rowWip").hidden = !S.useWip;
+  }
+
+  /* ---------- calculation ---------- */
+  function calc() {
+    var rev = S.revenue, cogs = S.cogs;
+    if (!(rev > 0 && cogs > 0)) return null;
+    var c = {
+      dso: S.debtors / rev * 365,
+      dio: S.noStock ? 0 : S.stock / cogs * 365,
+      wip: S.useWip ? S.wip / rev * 365 : 0,
+      dpo: S.creditors / cogs * 365,
+      dayRev: rev / 365,
+      dayCogs: cogs / 365
+    };
+    c.ccc = c.dso + c.dio + c.wip - c.dpo;
+    c.tied = S.debtors + (S.noStock ? 0 : S.stock) + (S.useWip ? S.wip : 0) - S.creditors;
+    c.disp = { dso: rd(c.dso), dio: rd(c.dio), wip: rd(c.wip), dpo: rd(c.dpo) };
+    c.dispCcc = c.disp.dso + c.disp.dio + c.disp.wip - c.disp.dpo;
+    return c;
+  }
+  function dayValue(c, k) { return (k === "dso" || k === "wip") ? c.dayRev : c.dayCogs; }
+  function activeKeys() {
+    var ks = ["dso"];
+    if (!S.noStock) ks.push("dio");
+    if (S.useWip) ks.push("wip");
+    ks.push("dpo");
+    return ks;
+  }
+  function benchRange(k) {
+    var B = SECTORS[S.sector];
+    return B ? B[k] : null;
+  }
+  function scen(c) {
+    var r = {
+      dso: Math.min(L.dso, c.dso),
+      dio: S.noStock ? 0 : Math.min(L.dio, c.dio),
+      wip: S.useWip ? Math.min(L.wip, c.wip) : 0,
+      dpo: L.dpo
+    };
+    var cash = { dso: r.dso * c.dayRev, dio: r.dio * c.dayCogs, wip: r.wip * c.dayRev, dpo: r.dpo * c.dayCogs };
+    var total = cash.dso + cash.dio + cash.wip + cash.dpo;
+    var days = r.dso + r.dio + r.wip + r.dpo;
+    var after = { dso: c.dso - r.dso, dio: c.dio - r.dio, wip: c.wip - r.wip, dpo: c.dpo + r.dpo };
+    return { r: r, cash: cash, total: total, days: days, after: after,
+      newCcc: c.dispCcc - rd(days), daysDisp: rd(days) };
+  }
+  function bench(c) {
+    var out = { gap: {}, total: 0, has: false };
+    activeKeys().forEach(function (k) {
+      var rg = benchRange(k);
+      if (!rg) { out.gap[k] = 0; return; }
+      out.has = true;
+      var mid = (rg[0] + rg[1]) / 2;
+      var g = (k === "dpo") ? Math.max(0, mid - c[k]) : Math.max(0, c[k] - mid);
+      out.gap[k] = g * dayValue(c, k);
+      out.total += out.gap[k];
+    });
+    return out;
+  }
+  function status(k, v) {
+    var rg = benchRange(k);
+    if (!rg) return null;
+    var x = rd(v);
+    if (k === "dpo") {
+      if (x < rg[0]) return { c: "warn", t: "Faster than typical" };
+      if (x > rg[1]) return { c: "info", t: "Longer than typical" };
+      return { c: "ok", t: "Within typical" };
+    }
+    if (x > rg[1]) return { c: "bad", t: "Above typical" };
+    if (x < rg[0]) return { c: "good", t: "Better than typical" };
+    return { c: "ok", t: "Within typical" };
+  }
+
+  /* ---------- render ---------- */
+  function render() {
+    var c = calc();
+    var warns = [];
+    if (S.revenue > 0 && S.cogs > S.revenue) warns.push("Cost of sales is higher than revenue. Check you have entered annual totals, ex VAT.");
+    if (S.revenue > 0 && S.debtors > S.revenue) warns.push("Trade debtors are higher than a full year of revenue. Check the figure.");
+    if (S.cogs > 0 && S.creditors > S.cogs) warns.push("Trade creditors are higher than a full year of cost of sales. Check the figure.");
+    $("warns").innerHTML = warns.map(function (w) { return '<p class="note-warn">' + w + "</p>"; }).join("");
+
+    $("empty").hidden = !!c;
+    $("dash").querySelectorAll("section, details").forEach(function (el) { el.hidden = !c; });
+    if (!c) { updateMail(null); return; }
+
+    var sc = scen(c), bn = bench(c), B = SECTORS[S.sector];
+
+    /* slider limits */
+    var caps = { dso: Math.max(1, Math.min(60, Math.ceil(c.dso))), dio: Math.max(1, Math.min(60, Math.ceil(c.dio))),
+      wip: Math.max(1, Math.min(45, Math.ceil(c.wip))), dpo: 30 };
+    [["dso", "sDso"], ["dio", "sDio"], ["wip", "sWip"], ["dpo", "sDpo"]].forEach(function (p) {
+      var el = $(p[1]);
+      el.max = caps[p[0]];
+      if (L[p[0]] > caps[p[0]]) L[p[0]] = caps[p[0]];
+      el.value = L[p[0]];
+    });
+    $("rDso").textContent = L.dso + " days";
+    $("rDio").textContent = L.dio + " days";
+    $("rWip").textContent = L.wip + " days";
+    $("rDpo").textContent = L.dpo + " days";
+    sc = scen(c);
+
+    /* hero */
+    var neg = c.dispCcc <= 0;
+    $("heroCcc").innerHTML = NUM.format(c.dispCcc) + "<small>days</small>";
+    $("heroExplain").textContent = neg
+      ? "Your suppliers are paid after your customers pay you, so the cycle funds itself. Protect those supplier terms."
+      : "About this many days pass between paying for what you sell and being paid for it. You fund that gap from your own cash or borrowing.";
+    $("factTied").textContent = money(c.tied);
+    if (bn.has) {
+      $("factReleaseLabel").textContent = "Could be released at typical " + B.label + " levels";
+      $("factRelease").textContent = money(bn.total);
+    } else {
+      $("factReleaseLabel").textContent = "Cash released by your scenario below";
+      $("factRelease").textContent = money(sc.total);
+    }
+    var chips = [];
+    activeKeys().forEach(function (k, i) {
+      if (k === "dpo") { chips.push('<span class="op">−</span>'); }
+      else if (i > 0) { chips.push('<span class="op">+</span>'); }
+      chips.push('<span class="chip">' + NAMES[k].replace(" days", "") + " <b>" + c.disp[k] + "</b></span>");
+    });
+    chips.push('<span class="op">=</span><span class="chip"><b>' + NUM.format(c.dispCcc) + " days</b></span>");
+    $("eq").innerHTML = chips.join("");
+
+    /* priority line */
+    var pr = "";
+    if (bn.has) {
+      var best = null;
+      activeKeys().forEach(function (k) { if (bn.gap[k] > 0 && (!best || bn.gap[k] > bn.gap[best])) best = k; });
+      if (best) pr = "Biggest opening: <b>" + NAMES[best].toLowerCase() + "</b>, worth about " + money(bn.gap[best]) + " against typical " + B.label + " levels. <a href=\"#cta-h\">Talk it through with us</a>";
+      else pr = "You are at or better than typical levels on every measure. The scenarios below show what further gains would be worth.";
+    } else {
+      var bk = null;
+      activeKeys().forEach(function (k) { if (k !== "dpo" && (!bk || dayValue(c, k) > dayValue(c, bk))) bk = k; });
+      pr = "Pick a business type for benchmark comparisons. Each day of " + NAMES[bk].toLowerCase() + " is worth about " + money(dayValue(c, bk)) + " in cash.";
+    }
+    $("priority").innerHTML = pr;
+
+    /* components */
+    $("compSub").textContent = bn.has ? "Shaded bar shows the indicative typical range for " + B.label + "." : "Choose a business type to compare with typical ranges.";
+    $("comps").innerHTML = activeKeys().map(function (k) {
+      var rg = benchRange(k), st = status(k, c[k]), meter = "";
+      if (rg) {
+        var mx = Math.max(10, Math.ceil(Math.max(c[k], rg[1]) * 1.2 / 5) * 5);
+        var l = rg[0] / mx * 100, w = Math.max(1.5, (rg[1] - rg[0]) / mx * 100), m = Math.min(100, c[k] / mx * 100);
+        meter = '<div class="meter" role="img" aria-label="' + NAMES[k] + " " + c.disp[k] + " days. Typical range " + rg[0] + " to " + rg[1] + ' days">' +
+          '<span class="band" style="left:' + l + "%;width:" + w + '%"></span><span class="mark" style="left:' + m + '%"></span></div>' +
+          '<div class="meter-key"><span>0</span><span>Typical ' + rg[0] + "–" + rg[1] + " days</span></div>";
+      }
+      return '<article class="comp"><header><h3>' + NAMES[k] + "<span>" + ABBR[k] + "</span></h3>" +
+        (st ? '<span class="pill ' + st.c + '">' + st.t + "</span>" : "") + "</header>" +
+        '<p class="val">' + c.disp[k] + "<small>days</small></p><p class=\"desc\">" + DESC[k] + "</p>" + meter +
+        '<p class="daycash">Each day is worth about <b>' + money(dayValue(c, k)) + "</b> in cash.</p></article>";
+    }).join("");
+
+    /* scenario outcome */
+    $("oCcc").innerHTML = NUM.format(sc.newCcc) + " <small>days</small>";
+    $("oCccSub").textContent = sc.daysDisp > 0 ? "Down " + sc.daysDisp + " days from " + NUM.format(c.dispCcc) : "No change from today";
+    $("oCash").textContent = money(sc.total);
+    $("oCashSub").textContent = sc.total > 0 ? "About " + (sc.total / S.revenue * 100).toFixed(1) + "% of annual revenue" : "Move a slider to test a change";
+    var mxCash = Math.max.apply(null, activeKeys().map(function (k) { return sc.cash[k]; }).concat([1]));
+    $("levers").innerHTML = activeKeys().map(function (k) {
+      var d = k === "dpo" ? "+" + rd(sc.r[k]) : "−" + rd(sc.r[k]);
+      return '<div class="lever"><div class="t"><span>' + NAMES[k] + " (" + d + " days)</span><b>" + money(sc.cash[k]) + '</b></div><div class="bar"><span style="width:' + (sc.cash[k] / mxCash * 100) + '%"></span></div></div>';
+    }).join("");
+
+    /* timeline */
+    var vTod = { dio: c.dio, wip: c.wip, dso: c.dso, dpo: c.dpo };
+    var vAft = sc.after;
+    var maxV = Math.max(vTod.dio + vTod.wip + vTod.dso, vTod.dpo, vAft.dio + vAft.wip + vAft.dso, vAft.dpo, 10);
+    var steps = [10, 20, 25, 30, 50, 100, 200], step = steps[steps.length - 1];
+    for (var i = 0; i < steps.length; i++) { if (maxV / steps[i] <= 6) { step = steps[i]; break; } }
+    var axisMax = Math.ceil(maxV / step) * step;
+    $("tl").innerHTML = tlBlock("Today", vTod, axisMax, step) + tlBlock("With these improvements", vAft, axisMax, step);
+
+    updateMail(c, sc, bn);
+  }
+
+  function tlBlock(title, v, axisMax, step) {
+    var p = function (x) { return x / axisMax * 100; };
+    var total = v.dio + v.wip + v.dso;
+    var segs = [["dio", "c-stock", "Stock"], ["wip", "c-wip", "Unbilled work"], ["dso", "c-debt", "Customers pay"]].filter(function (s) { return v[s[0]] > 0.01; });
+    var acc = 0, segHtml = "", cap = "";
+    segs.forEach(function (s) {
+      segHtml += '<span class="seg ' + s[1] + '" style="left:' + p(acc) + "%;width:" + p(v[s[0]]) + '%"></span>';
+      acc += v[s[0]];
+      cap += '<span><i class="dot ' + s[1] + '"></i>' + s[2] + " <b>" + rd(v[s[0]]) + "d</b></span>";
+    });
+    var totDisp = rd(v.dio) + rd(v.wip) + rd(v.dso), gapDisp = totDisp - rd(v.dpo);
+    var pos = total >= v.dpo, lo = Math.min(total, v.dpo), hi = Math.max(total, v.dpo);
+    var grid = "", ticks = "";
+    for (var t = 0; t <= axisMax; t += step) {
+      grid += '<i class="gl" style="left:' + p(t) + '%"></i>';
+      ticks += '<span style="left:' + p(t) + '%">' + t + "</span>";
+    }
+    return '<div class="tl-block" role="img" aria-label="' + title + ": cash out to cash in takes " + totDisp + " days; suppliers are paid after " + rd(v.dpo) + " days; gap " + gapDisp + ' days"><h3>' + title + '</h3><div class="tlbody">' + grid +
+      '<div class="tlrow"><div class="cap"><span>Money goes into stock, then comes back from customers: <b>' + totDisp + " days</b></span></div><div class=\"cap\">" + cap + '</div><div class="track">' + segHtml + "</div></div>" +
+      '<div class="tlrow"><div class="cap"><span><i class="dot c-supp"></i>Suppliers wait <b>' + rd(v.dpo) + 'd</b> for payment</span></div><div class="track"><span class="seg c-supp" style="left:0;width:' + p(v.dpo) + '%"></span></div></div>' +
+      '<div class="tlrow"><div class="cap"><span><i class="dot ' + (pos ? "gap-pos" : "gap-neg") + '"></i>' + (pos ? "Days you fund from your own cash" : "Days your suppliers fund for you") + " <b>" + Math.abs(gapDisp) + 'd</b></span></div><div class="track"><span class="seg ' + (pos ? "gap-pos" : "gap-neg") + '" style="left:' + p(lo) + "%;width:" + Math.max(0.4, p(hi - lo)) + '%"></span></div></div>' +
+      '</div><div class="axis" aria-hidden="true">' + ticks + '</div><p class="axis-title">Days from buying stock or starting work</p></div>';
+  }
+
+  /* ---------- summary, email ---------- */
+  function summaryText() {
+    var c = calc(); if (!c) return "";
+    var sc = scen(c), bn = bench(c), B = SECTORS[S.sector];
+    var lines = ["Frctnl Finance: cash conversion cycle summary" + (edited ? "" : " (example figures)"),
+      "Business type: " + $("sector").options[$("sector").selectedIndex].text,
+      "Revenue " + money(S.revenue) + "; cost of sales " + money(S.cogs) + "; trade debtors " + money(S.debtors) +
+        (S.noStock ? "" : "; stock " + money(S.stock)) + (S.useWip ? "; unbilled work " + money(S.wip) : "") + "; trade creditors " + money(S.creditors),
+      "Cash conversion cycle: " + c.dispCcc + " days (" + activeKeys().map(function (k) { return NAMES[k].toLowerCase() + " " + c.disp[k]; }).join(", ") + ")",
+      "Cash tied up in trading: " + money(c.tied)];
+    if (bn.has) lines.push("Potential release at typical " + B.label + " levels: " + money(bn.total));
+    lines.push("Scenario (debtors -" + rd(sc.r.dso) + (S.noStock ? "" : ", stock -" + rd(sc.r.dio)) + (S.useWip ? ", unbilled -" + rd(sc.r.wip) : "") + ", creditors +" + rd(sc.r.dpo) + " days): cycle " + sc.newCcc + " days, cash released about " + money(sc.total));
+    return lines.join("\n");
+  }
+  function updateMail(c) {
+    var body = c ? "Hello,\n\nI used the cash conversion cycle tool and would like a free 30-minute working-capital review.\n\n" + summaryText() + "\n\nMy name and company:\n" : "Hello,\n\nI would like a free 30-minute working-capital review.\n";
+    $("mailBtn").href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Working-capital review request") + "&body=" + encodeURIComponent(body);
+  }
+  function setStatus(t) { $("status").textContent = t; }
+  function copyText(text, okMsg) {
+    var done = function () { setStatus(okMsg); };
+    var fallback = function () {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = text; ta.style.position = "fixed"; ta.style.opacity = "0";
+        document.body.appendChild(ta); ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        setStatus(ok ? okMsg : "Copying was blocked here. Select the text and copy it manually.");
+      } catch (e) { setStatus("Copying was blocked here. Select the text and copy it manually."); }
+    };
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  }
+
+  /* ---------- PDF ---------- */
+  function logoPNG() {
+    return new Promise(function (res) {
+      var img = new Image();
+      img.onload = function () {
+        try {
+          var cv = document.createElement("canvas");
+          cv.width = img.width * 2; cv.height = img.height * 2;
+          var cx = cv.getContext("2d");
+          cx.drawImage(img, 0, 0, cv.width, cv.height);
+          cx.globalCompositeOperation = "source-in";
+          cx.fillStyle = "#77206D"; cx.fillRect(0, 0, cv.width, cv.height);
+          res(cv.toDataURL("image/png"));
+        } catch (e) { res(null); }
+      };
+      img.onerror = function () { res(null); };
+      img.src = LOGO;
+    });
+  }
+  async function buildPDF() {
+    var c = calc(); var sc = scen(c), bn = bench(c), B = SECTORS[S.sector];
+    var jsPDF = window.jspdf.jsPDF;
+    var doc = new jsPDF({ unit: "mm", format: "a4" });
+    var W = 210, M = 16, CW = W - 2 * M, y = 16;
+    var PLUM = [119, 32, 109], TEAL = [11, 110, 123], INK = [33, 27, 36], MUTE = [95, 85, 100], LINE = [222, 213, 224];
+    var STOCK = [165, 106, 157], WIPC = [199, 154, 193], TEALF = [27, 154, 170], WARN = [168, 85, 0], GOOD = [27, 122, 75];
+    var page = 1;
+    function footer() {
+      doc.setFont("helvetica", "normal"); doc.setFontSize(7.5); doc.setTextColor.apply(doc, MUTE);
+      var t = doc.splitTextToSize("Indicative estimates based on the figures entered and broad sector ranges (rules of thumb). Not financial, tax, accounting or legal advice. Figures are ex VAT and assume year-end balances are representative of the year. Frctnl Finance | hello@frctnl.biz | www.frctnl.biz", CW - 14);
+      doc.text(t, M, 285);
+      doc.text("Page " + page, W - M, 285, { align: "right" });
+    }
+    function need(h) { if (y + h > 276) { footer(); doc.addPage(); page++; y = 18; } }
+    function h2(t) { need(14); doc.setFont("helvetica", "bold"); doc.setFontSize(12); doc.setTextColor.apply(doc, PLUM); doc.text(t, M, y); y += 6; }
+    function txt(t, size, col, bold) {
+      doc.setFont("helvetica", bold ? "bold" : "normal"); doc.setFontSize(size || 10); doc.setTextColor.apply(doc, col || INK);
+      var lines = doc.splitTextToSize(t, CW); need(lines.length * (size || 10) * 0.42 + 2);
+      doc.text(lines, M, y); y += lines.length * (size || 10) * 0.42 + 2;
+    }
+
+    var logo = await logoPNG();
+    if (logo) doc.addImage(logo, "PNG", M, y, 54, 54 * 67 / 391);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.setTextColor.apply(doc, MUTE);
+    doc.text(new Date().toLocaleDateString("en-GB", { day: "numeric", month: "long", year: "numeric" }), W - M, y + 6, { align: "right" });
+    y += 20;
+    doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.setTextColor.apply(doc, TEAL);
+    doc.text("CASH CONVERSION CYCLE SUMMARY", M, y); y += 8;
+    if (!edited) { txt("Based on the example figures supplied with the tool, not on your own accounts.", 9, WARN, true); }
+
+    /* headline band */
+    doc.setFillColor.apply(doc, PLUM); doc.roundedRect(M, y, CW, 34, 3, 3, "F");
+    doc.setTextColor(255, 255, 255); doc.setFont("helvetica", "bold"); doc.setFontSize(30);
+    doc.text(String(c.dispCcc), M + 8, y + 18);
+    var wNum = doc.getTextWidth(String(c.dispCcc));
+    doc.setFontSize(11); doc.text("days", M + 10 + wNum, y + 18);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9); doc.text("Your cash conversion cycle", M + 8, y + 26);
+    doc.setFont("helvetica", "bold"); doc.setFontSize(15);
+    doc.text(money(c.tied), M + 80, y + 12);
+    doc.text(bn.has ? money(bn.total) : money(sc.total), M + 80, y + 26);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(8.5);
+    doc.text("Cash tied up in day-to-day trading", M + 80, y + 16.5);
+    doc.text(bn.has ? "Releasable at typical " + B.label + " levels" : "Released by your scenario", M + 80, y + 30.5);
+    y += 42;
+
+    h2("Your figures");
+    var rows = [["Business type", $("sector").options[$("sector").selectedIndex].text], ["Annual revenue (ex VAT)", money(S.revenue)], ["Annual cost of sales", money(S.cogs)], ["Trade debtors", money(S.debtors)]];
+    if (!S.noStock) rows.push(["Stock", money(S.stock)]);
+    if (S.useWip) rows.push(["Unbilled work in progress", money(S.wip)]);
+    rows.push(["Trade creditors", money(S.creditors)]);
+    doc.setFontSize(9.5);
+    rows.forEach(function (r) { need(6); doc.setFont("helvetica", "normal"); doc.setTextColor.apply(doc, MUTE); doc.text(r[0], M, y); doc.setTextColor.apply(doc, INK); doc.text(r[1], M + 70, y); y += 5.5; });
+    y += 4;
+
+    h2("Where the days go");
+    need(8);
+    doc.setFont("helvetica", "bold"); doc.setFontSize(8.5); doc.setTextColor.apply(doc, MUTE);
+    doc.text("Measure", M, y); doc.text("Your days", M + 52, y); doc.text("Typical range", M + 82, y); doc.text("Position", M + 115, y); doc.text("One day is worth", W - M, y, { align: "right" });
+    y += 2; doc.setDrawColor.apply(doc, LINE); doc.line(M, y, W - M, y); y += 5;
+    activeKeys().forEach(function (k) {
+      need(7); var rg = benchRange(k), st = status(k, c[k]);
+      doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor.apply(doc, INK);
+      doc.text(NAMES[k] + " (" + ABBR[k] + ")", M, y);
+      doc.setFont("helvetica", "bold"); doc.text(String(c.disp[k]), M + 52, y);
+      doc.setFont("helvetica", "normal");
+      doc.text(rg ? rg[0] + " to " + rg[1] + " days" : "n/a", M + 82, y);
+      doc.text(st ? st.t : "n/a", M + 115, y);
+      doc.text(money(dayValue(c, k)), W - M, y, { align: "right" });
+      y += 6;
+    });
+    txt("Cash conversion cycle = " + activeKeys().map(function (k, i) { return (k === "dpo" ? "- " : (i ? "+ " : "")) + NAMES[k].replace(" days", "").toLowerCase() + " " + c.disp[k]; }).join(" ") + " = " + c.dispCcc + " days.", 9, MUTE);
+    y += 2;
+
+    h2("Scenario: practical improvements");
+    activeKeys().forEach(function (k) {
+      need(6); doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor.apply(doc, INK);
+      doc.text(NAMES[k] + (k === "dpo" ? ": extend by " : ": reduce by ") + rd(sc.r[k]) + " days", M, y);
+      doc.text(money(sc.cash[k]), M + 100, y, { align: "right" }); y += 5.5;
+    });
+    need(10); doc.setDrawColor.apply(doc, LINE); doc.line(M, y - 2, M + 100, y - 2);
+    doc.setFont("helvetica", "bold"); doc.setFontSize(10.5); doc.setTextColor.apply(doc, TEAL);
+    doc.text("Estimated cash released: " + money(sc.total), M, y + 3);
+    doc.text("Cycle: " + c.dispCcc + " days to " + sc.newCcc + " days", M + 100, y + 3, { align: "right" }); y += 10;
+
+    /* bars */
+    var vT = { dio: c.dio, wip: c.wip, dso: c.dso, dpo: c.dpo }, vA = sc.after;
+    var mx = Math.max(vT.dio + vT.wip + vT.dso, vT.dpo, vA.dio + vA.wip + vA.dso, vA.dpo, 10) * 1.05, bw = CW - 28;
+    function bars(label, v) {
+      need(24); doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.setTextColor.apply(doc, INK); doc.text(label, M, y); y += 3;
+      var x = M + 28, tot = v.dio + v.wip + v.dso;
+      doc.setFont("helvetica", "normal"); doc.setFontSize(8); doc.setTextColor.apply(doc, MUTE);
+      doc.text("Stock + customers", M, y + 3.6);
+      [[v.dio, STOCK], [v.wip, WIPC], [v.dso, PLUM]].forEach(function (s) { if (s[0] > 0.01) { doc.setFillColor.apply(doc, s[1]); doc.rect(x, y, s[0] / mx * bw, 4.5, "F"); x += s[0] / mx * bw; } });
+      y += 6.5; doc.text("Supplier credit", M, y + 3.6);
+      doc.setFillColor.apply(doc, TEALF); doc.rect(M + 28, y, v.dpo / mx * bw, 4.5, "F"); y += 6.5;
+      var lo = Math.min(tot, v.dpo), hi = Math.max(tot, v.dpo), pos = tot >= v.dpo;
+      doc.text(pos ? "Funded by you" : "Funded by suppliers", M, y + 3.6);
+      doc.setFillColor.apply(doc, pos ? WARN : GOOD); doc.rect(M + 28 + lo / mx * bw, y, Math.max(0.6, (hi - lo) / mx * bw), 4.5, "F"); y += 9;
+    }
+    bars("Today", vT); bars("With these improvements", vA);
+    txt("Bars run from the day stock is bought or work starts. Scale is shared between both views.", 8, MUTE);
+    y += 2;
+
+    /* CTA */
+    need(46);
+    doc.setDrawColor.apply(doc, PLUM); doc.setLineWidth(0.6); doc.roundedRect(M, y, CW, 40, 3, 3, "S");
+    doc.setFont("helvetica", "bold"); doc.setFontSize(13); doc.setTextColor.apply(doc, PLUM);
+    doc.text("Free 30-minute working-capital review", M + 6, y + 9);
+    doc.setFont("helvetica", "normal"); doc.setFontSize(9.5); doc.setTextColor.apply(doc, INK);
+    doc.text(doc.splitTextToSize("We will look at the main causes of cash being tied up in your business and agree a prioritised action plan.", CW - 12), M + 6, y + 16);
+    doc.setTextColor.apply(doc, TEAL); doc.setFont("helvetica", "bold");
+    doc.text("Email: hello@frctnl.biz", M + 6, y + 28);
+    doc.textWithLink("Website: www.frctnl.biz", M + 6, y + 34, { url: "https://www.frctnl.biz/" });
+    doc.textWithLink("Book online: click here to choose a time", M + 78, y + 28, { url: BOOK });
+    y += 46;
+    footer();
+    return doc.output("blob");
+  }
+
+  /* ---------- events ---------- */
+  function readForm() {
+    S.sector = $("sector").value;
+    S.revenue = num($("revenue")); S.cogs = num($("cogs")); S.debtors = num($("debtors"));
+    S.stock = num($("stock")); S.creditors = num($("creditors")); S.wip = num($("wip"));
+    S.noStock = $("noStock").checked; S.useWip = $("useWip").checked;
+  }
+  function markEdited() { if (!edited) { edited = true; $("exNote").hidden = true; } }
+  ["revenue", "cogs", "debtors", "stock", "creditors", "wip"].forEach(function (id) {
+    $(id).addEventListener("input", function () { markEdited(); readForm(); render(); });
+    $(id).addEventListener("blur", function () { var v = num($(id)); $(id).value = v ? NUM.format(v) : ""; });
+  });
+  $("sector").addEventListener("change", function () {
+    markEdited();
+    var svc = $("sector").value === "services";
+    $("noStock").checked = svc; $("useWip").checked = svc || $("sector").value === "construction";
+    readForm(); syncToggles(); render();
+  });
+  ["noStock", "useWip"].forEach(function (id) {
+    $(id).addEventListener("change", function () { markEdited(); readForm(); syncToggles(); render(); });
+  });
+  $("form").addEventListener("submit", function (e) { e.preventDefault(); });
+  $("clearBtn").addEventListener("click", function () {
+    S = { sector: S.sector, revenue: 0, cogs: 0, debtors: 0, stock: 0, creditors: 0, wip: 0, noStock: false, useWip: false };
+    edited = true; $("exNote").hidden = true; fillInputs(); render(); $("revenue").focus();
+  });
+  $("exampleBtn").addEventListener("click", function () {
+    S = Object.assign({}, EX); edited = false; $("exNote").hidden = false; fillInputs(); render();
+  });
+  [["sDso", "dso"], ["sDio", "dio"], ["sWip", "wip"], ["sDpo", "dpo"]].forEach(function (p) {
+    $(p[0]).addEventListener("input", function () { L[p[1]] = parseInt($(p[0]).value, 10) || 0; render(); });
+  });
+  document.querySelectorAll("[data-preset]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      var k = b.getAttribute("data-preset");
+      L = { dso: 0, dio: 0, dpo: 0, wip: 0 };
+      if (k === "dso") L.dso = 10;
+      if (k === "dio") L.dio = 5;
+      if (k === "dpo") L.dpo = 10;
+      if (k === "all") L = { dso: 10, dio: 5, dpo: 10, wip: 5 };
+      render();
+    });
+  });
+  $("copyMail").addEventListener("click", function () { copyText(EMAIL, "Email address copied."); });
+  $("copySummary").addEventListener("click", function () { copyText(summaryText(), "Results copied. Paste them into an email to " + EMAIL + "."); });
+  $("pdfBtn").addEventListener("click", async function () {
+    if (!window.jspdf) { setStatus("The PDF builder did not load. Use Copy my results instead."); return; }
+    setStatus("Preparing your PDF…");
+    try {
+      var blob = await buildPDF();
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement("a");
+      a.href = url; a.download = "frctnl-cash-conversion-cycle.pdf";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
+      setStatus("PDF downloaded.");
+    } catch (e) {
+      setStatus("The PDF could not be created. Use Copy my results instead.");
+    }
+  });
+
+  /* theme toggle */
+  var root = document.documentElement;
+  function isDark() { var t = root.getAttribute("data-theme"); return t ? t === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches; }
+  function themeLabel() { $("themeBtn").textContent = isDark() ? "Light mode" : "Dark mode"; }
+  $("themeBtn").addEventListener("click", function () { root.setAttribute("data-theme", isDark() ? "light" : "dark"); themeLabel(); });
+  themeLabel();
+
+  /* benchmark table */
+  $("benchTable").innerHTML = '<table><thead><tr><th>Business type</th><th>Debtor days</th><th>Stock days</th><th>Creditor days</th><th>Unbilled days</th></tr></thead><tbody>' +
+    Object.keys(SECTORS).filter(function (k) { return k !== "other"; }).map(function (k) {
+      var s = SECTORS[k], f = function (r) { return r ? r[0] + "–" + r[1] : "n/a"; };
+      return "<tr><td>" + s.label.charAt(0).toUpperCase() + s.label.slice(1) + "</td><td>" + f(s.dso) + "</td><td>" + f(s.dio) + "</td><td>" + f(s.dpo) + "</td><td>" + f(s.wip) + "</td></tr>";
+    }).join("") + "</tbody></table>";
+
+  fillInputs();
+  render();
+})();
+</script>
+</body>
+</html>
